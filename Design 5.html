@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project IRIS</title>
+    <style>
+        body {
+            background-color: #D3D2B5;
+        }
+
+        iframe {
+            position: absolute;
+            left: 50px;
+            top: 100px;
+        }
+
+        .buttonA {
+            position: absolute;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 32px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            top: 100px;
+            left: 760px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .buttonB {
+            position: absolute;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 32px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            top: 200px;
+            left: 760px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .buttonC {
+            position: absolute;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 32px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            top: 300px;
+            left: 760px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+
+        .buttonA:hover {
+            background-color: #3e8e41
+        }
+
+        .buttonB:hover {
+            background-color: #3e8e41
+        }
+
+        .buttonA:active {
+            background-color: #3e8e41;
+            transform: translateY(4px);
+        }
+
+        .buttonB:active {
+            background-color: #3e8e41;
+            transform: translateY(4px);
+        }
+
+        .buttonC:hover {
+            background-color: #3e8e41
+        }
+
+        .buttonD:hover {
+            background-color: #3e8e41
+        }
+
+        .buttonC:active {
+            background-color: #3e8e41;
+            transform: translateY(4px);
+        }
+
+        textarea {
+            position: absolute;
+            top: 550px;
+            left: 50px;
+        }
+
+        input[type=text] {
+            position: absolute;
+            width: 375px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url(Images/chat.png);
+            background-size: 20px 20px;
+            background-position: 10px 45px;
+            background-repeat: no-repeat;
+            padding: 45px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+            top: 550px;
+            left: 375px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <h1>Project Iris</h1>
+
+    <!--Maps API-->
+    <h2>
+        <iframe width="700"
+                height="450"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDBN5Ty8XKswy6e8oRfVaIr-nxa2PPZ6Uw
+    &q=Texas+AM+University" allowfullscreen></iframe>
+    </h2>
+    <!--Buttons-->
+    <button class="buttonA">Function 1</button>
+    <button class="buttonB">Function 2</button>
+    <button class="buttonC">Function 3</button>
+    <!--Chat typing box-->
+    <form>
+        <input type="text" name="chatbox" placeholder="Type to send">
+    </form>
+    <!--Chatbox-->
+    <textarea rows="5" cols="40" placeholder="Conversation not started"></textarea>
+
+
+</body>
+</html>

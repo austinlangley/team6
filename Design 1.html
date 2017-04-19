@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project IRIS</title>
+    <style>
+        body {
+            background-color: #D3D2B5;
+        }
+
+        iframe {
+            position: absolute;
+            left: 50px;
+            top: 100px;
+        }
+        textarea {
+            position: absolute;
+            top: 100px;
+            left: 620px;
+        }
+
+        .buttonA {
+            position: absolute;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            top: 600px;
+            left: 50px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .buttonB {
+            position: absolute;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            top: 600px;
+            left: 200px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+     
+
+        input[type=text] {
+            position: absolute;
+            width: 160px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url(Images/chat.png);
+            background-size: 20px 20px;
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+            top: 605px;
+            left: 400px;
+        }
+
+            input[type=text]:focus {
+                width: 525px;
+            }
+        .buttonA:hover {
+            background-color: #3e8e41
+        }
+        .buttonB:hover {
+            background-color: #3e8e41
+        }
+        .buttonA:active {
+            background-color: #3e8e41;
+            transform: translateY(4px);
+        }
+        .buttonB:active {
+            background-color: #3e8e41;            
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <h1>Project Iris</h1>
+
+    <!--Maps API-->
+    <h2>
+        <iframe width="550"
+                height="450"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDBN5Ty8XKswy6e8oRfVaIr-nxa2PPZ6Uw
+    &q=Texas+AM+University" allowfullscreen></iframe>
+    </h2>
+    <!--Buttons-->
+    <button class="buttonA">Function 1</button>
+    <button class="buttonB">Function 2</button>
+    <!--Chat typing box-->
+    <form>
+        <input type="text" name="chatbox" placeholder="Type to send">
+    </form>
+    <!--Chatbox-->
+    <textarea rows="30" cols="40" placeholder="Conversation not started"></textarea>
+
+</body>
+</html>
