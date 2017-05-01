@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <title>PROJECT IRIS</title>
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            background-color: #999;
+        }
+
+        #wrapper {
+            outline: 1px solid black;
+            background-color: #E7DFDD;
+            width: 90%;
+            margin: 0 auto;
+            padding: 1%;
+            min-width: 600px;
+            max-width: 1300px;
+        }
+
+        .center {
+            padding: 50% 0;
+            border: 3px solid green;
+        }
+
+        header {
+            background-color: #96858F;
+            text-align: center;
+            margin: 1%;
+            padding: 0.5%;
+            border-radius: 0.5em;
+            font-family: serif, Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        footer {
+            background-color: #96858F;
+            text-align: center;
+            margin: 1%;
+            padding: 0.5%;
+            border-radius: 0.5em;
+            font-family: serif, Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #main {
+            display: -webkit-box; /* old Safar, iOS, Android */
+            display: -moz-box; /* old Firefox */
+            display: -ms-flexbox; /* IE 10+ */
+            display: -webkit-flex; /* Chrome and Safari 6.1 + 8? */
+            display: flex; /* IE 11, Chrome 29+, Firefox 22+ */
+        }
+
+            #main > article {
+                background-color: #D5D5D5;
+                -webkit-box-flex: 0 1 60%;
+                -moz-box-flex: 0 1 60%;
+                -webkit-flex: 0 1 60%;
+                -ms-flex: 0 1 60%;
+                flex: 0 1 60%;
+                -webkit-box-ordinal-group: 2;
+                -moz-box-ordinal-group: 2;
+                -ms-flex-order: 2;
+                -webkit-order: 2;
+                order: 2;
+                margin: 1%;
+                padding: 0.5%;
+                border-radius: 0.5em;
+            }
+
+            #main > nav {
+                background-color: #6D7993;
+                -webkit-box-flex: 0 1 20%;
+                -moz-box-flex: 0 1 20%;
+                -webkit-flex: 0 1 20%;
+                -ms-flex: 0 1 20%;
+                flex: 0 1 20%;
+                -webkit-box-ordinal-group: 1;
+                -moz-box-ordinal-group: 1;
+                -ms-flex-order: 1;
+                -webkit-order: 1;
+                order: 1;
+                margin: 1%;
+                padding: 0.5%;
+                border-radius: 0.5em;
+            }
+
+            #main > aside {
+                background-color: #9099A2;
+                -webkit-box-flex: 0 1 20%;
+                -moz-box-flex: 0 1 20%;
+                -webkit-flex: 0 1 20%;
+                -ms-flex: 0 1 20%;
+                flex: 0 1 20%;
+                -webkit-box-ordinal-group: 3;
+                -moz-box-ordinal-group: 3;
+                -ms-flex-order: 3;
+                -webkit-order: 3;
+                order: 3;
+                margin: 1%;
+                padding: 0.5%;
+                border-radius: 0.5em;
+            }
+
+        p {
+            text-indent: 1em;
+            padding: 0 0.5em;
+        }
+
+        #main h3 {
+            padding: 0 0.5em;
+        }
+
+        a:link {
+            color: Black;
+            background-color: transparent;
+            text-decoration: none;
+            line-height: 50px;
+        }
+
+        a:visited {
+            color: pink;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        img {
+            display: inline-block;
+            position: center;
+        }
+
+            img#logo {
+                vertical-align: middle;
+                padding: 0 1% 0 0;
+            }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <header>
+            <h1>PROJECT IRIS</h1>
+
+        </header>
+
+        <div id="main">
+            <article></article>
+
+
+
+            <nav>
+                <ul style="list-style-type:circle">
+                    <li>
+                        <a href="#About">About</a>
+                    </li>
+                    <li>
+                        <a href="#Images">Images</a>
+                    </li>
+                    <li>
+                        <a href="#Videos">Videos</a>
+                    </li>
+                    <li>
+                        <a href="#Top Golfer">Top Golfers</a>
+                    </li>
+                    <li>
+                        <a href="#Contact Us">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <aside>
+                <h3>Chat</h3>
+                <div id="tlkio" data-channel="2817e0590f68d1d131a35b4fbe7ba1"
+                     data-theme="theme--day"
+                     data-custom-css="style.css"
+                     style=" top:20px; left:600px; width:700px; height:450px;">
+                </div>
+                <script async src="http://tlk.io/embed.js" type="text/javascript"></script>
+
+
+
+
+
+
+            </aside>
+        </div>  <!-- main -->
+
+        <footer>
+            <address id="Contact Us">PROJECT IRIS at Texas A&M University | 1 Bizzell St | College Station, TX 77841 | 123-456-7890</address>
+        </footer>
+
+    </div>  <!-- wrapper -->
+
+</body>
+</html>
