@@ -265,93 +265,64 @@
                     </h2>
                 </div>
 
-
-
-
                 <div id="videoStream">  
-                        <video id="video" width="780" height="600" autoplay></video>
-                    <button id="snap" class="sexyButton">Snap Photo</button>
-                        <canvas id="video" width="780" height="600"></canvas>
-                        <script>
-
-                            // Put event listeners into place
-                            window.addEventListener("DOMContentLoaded", function () {
-                                // Grab elements, create settings, etc.
-                                var canvas = document.getElementById('canvas');
-                                var context = canvas.getContext('2d');
-                                var video = document.getElementById('video');
-                                var mediaConfig = { video: true };
-                                var errBack = function (e) {
-                                    console.log('An error has occurred!', e)
-                                };
-
-                                // Put video listeners into place
-                                if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                                    navigator.mediaDevices.getUserMedia(mediaConfig).then(function (stream) {
-                                        video.src = window.URL.createObjectURL(stream);
-                                        video.play();
-                                    });
-                                }
-
-                                /* Legacy code below! */
-                                else if (navigator.getUserMedia) { // Standard
-                                    navigator.getUserMedia(mediaConfig, function (stream) {
-                                        video.src = stream;
-                                        video.play();
-                                    }, errBack);
-                                } else if (navigator.webkitGetUserMedia) { // WebKit-prefixed
-                                    navigator.webkitGetUserMedia(mediaConfig, function (stream) {
-                                        video.src = window.webkitURL.createObjectURL(stream);
-                                        video.play();
-                                    }, errBack);
-                                } else if (navigator.mozGetUserMedia) { // Mozilla-prefixed
-                                    navigator.mozGetUserMedia(mediaConfig, function (stream) {
-                                        video.src = window.URL.createObjectURL(stream);
-                                        video.play();
-                                    }, errBack);
-                                }
-
-                                // Trigger photo take
-                                document.getElementById('snap').addEventListener('click', function () {
-                                    context.drawImage(video, 0, 0, 780, 600);
-                                });
-                            }, false);
-
-                        </script>
+                    <h2>
+                        <iframe width="780"
+                                height="600"
+                                frameborder="0" style="border:0"
+                                ></iframe>
+                    </h2>
 
                 </div>
+
+
+
                 <script src="js/video.js"></script>
+
                 <script>
+                    var m = document.getElementById('map');
+                    var w = document.getElementById('weather');
+                    var v = document.getElementById('videoStream');
+                    m.style.display = 'block';
+                    w.style.display = 'none';
+                    v.style.display = 'none';
+
+
                     function toggleMap() {
-                        var x = document.getElementById('map');
-                        if (x.style.display === 'none') {
-                            x.style.display = 'block';
-                        } else {
-                            x.style.display = 'none';
-                        }
+                        var m = document.getElementById('map');
+                        var w = document.getElementById('weather');
+                        var v = document.getElementById('videoStream');
+                        if (m.style.display === 'none') {
+                            m.style.display = 'block';
+                            w.style.display = 'none';
+                            v.style.display = 'none';
+                        } 
                     }
-                </script>
 
-                <script>
                     function toggleWeather() {
-                        var x = document.getElementById('weather');
-                        if (x.style.display === 'none') {
-                            x.style.display = 'block';
-                        } else {
-                            x.style.display = 'none';
-                        }
+                        var w = document.getElementById('weather');
+                        var m = document.getElementById('map');
+                        var v = document.getElementById('videoStream');
+                        if (w.style.display === 'none') {
+                            m.style.display = 'none';
+                            w.style.display = 'block';
+                            v.style.display = 'none';
+                        } 
                     }
-                </script>
 
-                <script>
                     function toggleVideo() {
-                        var x = document.getElementById('videoStream');
-                        if (x.style.display === 'none') {
-                            x.style.display = 'block';
-                        } else {
-                            x.style.display = 'none';
-                        }
+                        var v = document.getElementById('videoStream');
+                        var m = document.getElementById('map');
+                        var w = document.getElementById('weather');
+                        if (v.style.display === 'none') {
+                            m.style.display = 'none';
+                            w.style.display = 'none';
+                            v.style.display = 'block';
+                        } 
                     }
+
+
+                
                 </script>
 
 
