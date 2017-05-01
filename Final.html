@@ -232,6 +232,7 @@
             background: url("Images/vidh.jpg") no-repeat scroll 0 0 transparent;
             transform: translateY(4px);
         }
+
         #map {
             height: 600px;
             width: 780px;
@@ -260,46 +261,46 @@
                     </h2>-->
 
                     <script>
-     // Note: This example requires that you consent to location sharing when
-     // prompted by your browser. If you see the error "The Geolocation service
-     // failed.", it means you probably did not give permission for the browser to
-     // locate you.
-     var map, infoWindow;
-     function initMap() {
-         map = new google.maps.Map(document.getElementById('map'), {
-             center: { lat: -34.397, lng: 150.644 },
-             zoom: 6
-         });
-         infoWindow = new google.maps.InfoWindow;
+                        // Note: This example requires that you consent to location sharing when
+                        // prompted by your browser. If you see the error "The Geolocation service
+                        // failed.", it means you probably did not give permission for the browser to
+                        // locate you.
+                        var map, infoWindow;
+                        function initMap() {
+                            map = new google.maps.Map(document.getElementById('map'), {
+                                center: { lat: -34.397, lng: 150.644 },
+                                zoom: 6
+                            });
+                            infoWindow = new google.maps.InfoWindow;
 
-         // Try HTML5 geolocation.
-         if (navigator.geolocation) {
-             navigator.geolocation.getCurrentPosition(function (position) {
-                 var pos = {
-                     lat: position.coords.latitude,
-                     lng: position.coords.longitude
-                 };
+                            // Try HTML5 geolocation.
+                            if (navigator.geolocation) {
+                                navigator.geolocation.getCurrentPosition(function (position) {
+                                    var pos = {
+                                        lat: position.coords.latitude,
+                                        lng: position.coords.longitude
+                                    };
 
-                 infoWindow.setPosition(pos);
-                 infoWindow.setContent('Location found.');
-                 infoWindow.open(map);
-                 map.setCenter(pos);
-             }, function () {
-                 handleLocationError(true, infoWindow, map.getCenter());
-             });
-         } else {
-             // Browser doesn't support Geolocation
-             handleLocationError(false, infoWindow, map.getCenter());
-         }
-     }
+                                    infoWindow.setPosition(pos);
+                                    infoWindow.setContent('Location found.');
+                                    infoWindow.open(map);
+                                    map.setCenter(pos);
+                                }, function () {
+                                    handleLocationError(true, infoWindow, map.getCenter());
+                                });
+                            } else {
+                                // Browser doesn't support Geolocation
+                                handleLocationError(false, infoWindow, map.getCenter());
+                            }
+                        }
 
-     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-         infoWindow.setPosition(pos);
-         infoWindow.setContent(browserHasGeolocation ?
-             'Error: The Geolocation service failed.' :
-             'Error: Your browser doesn\'t support geolocation.');
-         infoWindow.open(map);
-     }
+                        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                            infoWindow.setPosition(pos);
+                            infoWindow.setContent(browserHasGeolocation ?
+                                'Error: The Geolocation service failed.' :
+                                'Error: Your browser doesn\'t support geolocation.');
+                            infoWindow.open(map);
+                        }
                     </script>
                     <script async defer
                             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChOD5hTSUUWLuscBw5Oe5m1ad3NmZjpk8&callback=initMap">
@@ -325,64 +326,71 @@
                     </h2>
                 </div>
 
-                <div id="videoStream">  
-                    <h2>
-                        <iframe width="780"
-                                height="600"
-                                frameborder="0" style="border:0"
-                                ></iframe>
-                    </h2>
-
+                <div id="videoStream" height="600" width="780">
+                    
+                    <video autoplay="true" id="videoElement"></video>
                 </div>
 
 
 
-                <script src="js/video.js"></script>
+                <script>
+                        var video = document.querySelector("#videoElement");
+                        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+                        if (navigator.getUserMedia) {
+                            navigator.getUserMedia({ video: true }, handleVideo, videoError);
+                        }
+                        function handleVideo(stream) {
+                            video.src = window.URL.createObjectURL(stream);
+                        }
+                        function videoError(e) {
+                          // something
+                        }
+                </script>
 
                 <script>
-                    var m = document.getElementById('map');
-                    var w = document.getElementById('weather');
-                    var v = document.getElementById('videoStream');
-                    m.style.display = 'block';
-                    w.style.display = 'none';
-                    v.style.display = 'none';
-
-
-                    function toggleMap() {
                         var m = document.getElementById('map');
                         var w = document.getElementById('weather');
                         var v = document.getElementById('videoStream');
-                        if (m.style.display === 'none') {
-                            m.style.display = 'block';
-                            w.style.display = 'none';
-                            v.style.display = 'none';
-                        } 
-                    }
-
-                    function toggleWeather() {
-                        var w = document.getElementById('weather');
-                        var m = document.getElementById('map');
-                        var v = document.getElementById('videoStream');
-                        if (w.style.display === 'none') {
-                            m.style.display = 'none';
-                            w.style.display = 'block';
-                            v.style.display = 'none';
-                        } 
-                    }
-
-                    function toggleVideo() {
-                        var v = document.getElementById('videoStream');
-                        var m = document.getElementById('map');
-                        var w = document.getElementById('weather');
-                        if (v.style.display === 'none') {
-                            m.style.display = 'none';
-                            w.style.display = 'none';
-                            v.style.display = 'block';
-                        } 
-                    }
+                        m.style.display = 'block';
+                        w.style.display = 'none';
+                        v.style.display = 'none';
 
 
-                
+                        function toggleMap() {
+                            var m = document.getElementById('map');
+                            var w = document.getElementById('weather');
+                            var v = document.getElementById('videoStream');
+                            if (m.style.display === 'none') {
+                                m.style.display = 'block';
+                                w.style.display = 'none';
+                                v.style.display = 'none';
+                            }
+                        }
+
+                        function toggleWeather() {
+                            var w = document.getElementById('weather');
+                            var m = document.getElementById('map');
+                            var v = document.getElementById('videoStream');
+                            if (w.style.display === 'none') {
+                                m.style.display = 'none';
+                                w.style.display = 'block';
+                                v.style.display = 'none';
+                            }
+                        }
+
+                        function toggleVideo() {
+                            var v = document.getElementById('videoStream');
+                            var m = document.getElementById('map');
+                            var w = document.getElementById('weather');
+                            if (v.style.display === 'none') {
+                                m.style.display = 'none';
+                                w.style.display = 'none';
+                                v.style.display = 'block';
+                            }
+                        }
+
+
+
                 </script>
 
 
