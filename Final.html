@@ -145,11 +145,51 @@
                 vertical-align: middle;
                 padding: 0 1% 0 0;
             }
-        map .buttonA {
-            background: url("../map.jpg");
+        .buttonA {
+            background: url("Images/map.jpg") no-repeat scroll 0 0 transparent;
+            border: none;
+            color: transparent;
+            padding: 27px 50px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            border-radius: 15px;
+        }
+        .buttonB {
+            background: url("Images/weather.jpg") no-repeat scroll 0 0 transparent;
+            border: none;
+            color: transparent;
+            padding: 27px 50px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            border-radius: 15px;
+        }
+        .buttonA:hover {
+            background: url("Images/maph.jpg") no-repeat scroll 0 0 transparent
         }
 
+        .buttonB:hover {
+            background: url("Images/weatherh.jpg") no-repeat scroll 0 0 transparent;
+        }
 
+        .buttonA:active {
+            background-color: #3e8e41;
+            transform: translateY(4px);
+        }
+
+        .buttonB:active {
+            background-color: #3e8e41;
+            transform: translateY(4px);
+        }
     </style>
 </head>
 
@@ -174,8 +214,8 @@
                     </h2>
                 </div>
                 <div align="center">
-                    <button class="buttonA">Function 1</button>
-                    <button class="buttonB">Function 2</button>
+                    <button class="buttonA"></button>
+                    <button class="buttonB"></button>
                 </div>
                 
             </article>
